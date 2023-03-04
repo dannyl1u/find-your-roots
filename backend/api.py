@@ -41,7 +41,8 @@ doc_count = records.count_documents({})
 
 @app.route('/index')
 def get_tree():
-    return "hello world - main page \n The count of documents is:" + doc_count
+    string = "hello world - main page \n The count of documents is:"
+    return (string)
 
 
 @app.route('/getNode/<personId>')
