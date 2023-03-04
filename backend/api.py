@@ -1,7 +1,8 @@
 from flask import Flask, render_template
 import api_requests.py
-doc_search(search_val)
-app = Flask(__name__)
+
+app = Flask(__name__ template_folder="templates")
+
 
 
 # How to make new document (INSERTING) -------------------------
@@ -37,8 +38,7 @@ app = Flask(__name__)
 
 @app.route('/index')
 def get_tree():
-    string = "hello world - main page \n The count of documents is:"
-    return (string)
+    return render_template('temp.html')
 
 
 @app.route('/getNode/<personId>')
