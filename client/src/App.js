@@ -8,10 +8,10 @@ function App() {
   useEffect(() => {
   // Using fetch to fetch the api from 
   // flask server it will be redirected to proxy
-  fetch("http://localhost:5000/index").then((res) =>
+  fetch("http://localhost:5000/getNodes").then((res) =>
       res.json().then((data) => {
           // Setting a data from api
-          setData(data)
+          setData(data[0])
           console.log(data.name)
       })
   );
@@ -19,7 +19,13 @@ function App() {
 
   return (
     <div className="App">
-       {data && data.name}
+      <h1>
+        Name: {data && data.name}
+      </h1>
+      <h2>
+        Age: {data && data.age}
+      </h2>
+
     </div>
   );
 }

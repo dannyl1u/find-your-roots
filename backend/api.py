@@ -5,11 +5,17 @@ from pymongo import MongoClient
 # from flask import (Flask, render_template)
 from flask_cors import CORS, cross_origin
 from flask import Flask, render_template
+import json
+
 
 
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+
+client = MongoClient("mongodb+srv://test:test@rootdata.glqu7s9.mongodb.net/?retryWrites=true&w=majority")
+db = client.get_database('familyTree_db')
+records = db.get_collection('tree_nodes')
 
 
 # app = Flask(__name__ template_folder="templates")
@@ -46,6 +52,14 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 # records.update_one({'name': 'john'}, {'$set': updates})   - updats key value within dictionary
 
+@app.route('/getNodes/')
+def getnames():
+    nodes_json = []
+    if records.find({}):
+        for node in records.find({}).sort("name"):
+            nodes_json.append({"name": node['name'], "id": str(node['_id']), "age": node['age']})
+    return json.dumps(nodes_json)
+    
 
 @app.route('/index')
 @cross_origin()
