@@ -1,14 +1,16 @@
 from flask import Flask, render_template, request
 from pymongo import MongoClient
+# import api_requests.py
 
-from flask import (Flask, render_template)
+# from flask import (Flask, render_template)
 from flask_cors import CORS, cross_origin
+from flask import Flask, render_template
+
+
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-from flask import Flask, render_template
-import api_requests.py
 
 # app = Flask(__name__ template_folder="templates")
 
