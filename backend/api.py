@@ -1,3 +1,9 @@
+from flask import (Flask, render_template)
+from flask_cors import CORS, cross_origin
+app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 from flask import Flask, render_template
 from pymongo import MongoClient
 
@@ -40,8 +46,10 @@ doc_count = records.count_documents({})
 
 
 @app.route('/index')
+@cross_origin()
 def get_tree():
-    return render_template('temp.html')
+    return {"name": "bob"}
+  #  return render_template('temp.html')
 
 
 @app.route('/getNode/<personId>')
@@ -52,7 +60,6 @@ def get_person(personId):
 @app.route('/addNode')
 def add_person():
     return "adding a new person"
-
 
 # @app.route()
 if __name__ == '__main__':
