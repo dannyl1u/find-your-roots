@@ -1,13 +1,138 @@
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
+  background-color: #E5E4E2;
+  font-family: 'Kanit', sans-serif;  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.webpage-header{
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+  font-size: larger;
+  color:#50C878;
+  background-color: #f1f1f1;
+  margin:auto;
+  width: 50%;
+  border-bottom: 4px solid black;
+  border-bottom-right-radius: 10px;
+  border-right: 4px solid black;
+  background-size: contain;
+  border-top: 4px solid rgb(123, 128, 121);
+  border-top-left-radius: 10px;
+  border-left: 4px solid rgb(123, 128, 121);
+  padding: 0 10px;
+  line-height: 0.7em;
+  display: block; /* Change from inline-block to block */
+  margin-inline: auto;
+  width: max-content;
+
+}
+
+
+.button-family-member {
+  display:block;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: 1px solid #FFF;
+  background-size:contain;
+  background-position: center;
+
+}
+
+.button-family-member:hover {
+  outline: 0;
+  
+}
+
+
+
+.button-jump {
+  align-items: center;
+  background-color: #50C878;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #FFF;
+  cursor: pointer;
+  display: flex;
+  font-size: 25px;
+  font-family: 'Kanit', sans-serif;  font-weight: bolder;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: 0.1em;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 15px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-jump:after {
+  background-color: #355E3B;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.button-jump:hover:after {
+  transform: translate(0, 0);
+}
+
+.button-jump:active {
+  background-color: #355E3B;
+  transform: translateY(4px);
+  outline: 0;
+}
+
+.button-jump:hover {
+  outline: 0;
+  background-color: #AFE1AF;
+}
+
+@media (min-width: 768px) {
+  .button-jump {
+    padding: 0 40px;
+  }
+}
+
+.left-footer {
+  display:flex;
+  justify-content: left;
+  align-items: left;
+
+  float:left; 
+  height:100px; 
+  margin:10px
+
+}
+
+.right-footer {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+
+  float:right; 
+  height:100px; 
+  margin:10px
 }

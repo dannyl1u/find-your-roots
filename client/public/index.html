@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="../src/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -24,20 +27,54 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Family Tree</title>
   </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <div class="body">
+    <body>
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <div id="root"></div>
+  
+      <div class="webpage-header">
+        <header>
+          <h1>FIND YOUR ROOTS</h1>
+        </header>
+  
+      </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+      <div class="tree-root-button">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+        <button style="background: url(JaneDoe.png)" class="button-family-member" role="button"></button>
+
+      </div>
+
+      <div class="tree-children-buttons">
+
+        <button>ChildOne</button>
+        <button>ChildTwo</button>
+        <button>ChildThree</button>
+
+      </div>
+
+      <div class="tree-children-buttons">
+
+        <button>ChildOne</button>
+        <button>ChildTwo</button>
+        <button>ChildThree</button>
+
+      </div>
+  
+  
+      <div class="footer-menu">
+        <footer>
+          <div class="left-footer">
+            <button class="button-jump" role="button">ADD MEMBER</button>
+          </div>
+          <div class="right-footer">
+            <button class="button-jump" role="button">EVENTS</button>
+          </div>
+        </footer>
+      </div>
+    </body>
+  </div>
+  
 </html>
