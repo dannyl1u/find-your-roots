@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from pymongo import MongoClient
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 
 client = MongoClient("mongodb+srv://test:test@rootdata.glqu7s9.mongodb.net/?retryWrites=true&w=majority")
 db = client.get_database('familyTree_db')
@@ -41,8 +41,7 @@ doc_count = records.count_documents({})
 
 @app.route('/index')
 def get_tree():
-    string = "hello world - main page \n The count of documents is:"
-    return (string)
+    return render_template('temp.html')
 
 
 @app.route('/getNode/<personId>')
