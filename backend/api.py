@@ -59,7 +59,6 @@ def get_person(personId):
 def add_person():
     return "adding a new person"
 
-
 # @app.route()
 if __name__ == '__main__':
     app.run(debug=True)
