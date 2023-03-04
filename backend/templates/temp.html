@@ -9,6 +9,21 @@
 <body>
 
     TEMP HTML PAGE FOR RENDERING!
+
+    <form action="/addNode" method="POST">
+
+        <center>
+            {%if name%}
+            <h3 style="color:green;"> Hello, how are you {{name}}?</h3>
+            {% endif %}
+        </center>
+
+        <label for="name">Enter your name:</label>
+        <input type="text" name="name">
+
+        <input type="Submit" >
+
+    </form>
     
 </body>
 </html>
