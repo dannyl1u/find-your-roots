@@ -1,17 +1,17 @@
-from flask import Flask, render_template, request
-from pymongo import MongoClient
-
+import api_requests.py
+from flask import Flask, render_template
 from flask import (Flask, render_template)
 from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-from flask import Flask, render_template
-import api_requests.py
+app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 
 app = Flask(__name__ template_folder="templates")
-
 
 
 # How to make new document (INSERTING) -------------------------
@@ -57,11 +57,10 @@ def get_person(personId):
     return ("the person you returned is " + personId)
 
 
-@app.route('/addNode', methods=['POST', 'GET'])
+@app.route('/addNode')
 def add_person():
-    output = request.form.to_dict()
-    name = output["name"]
-    return render_template('temp.html', name=name)
+    return "adding a new person"
+
 
 # @app.route()
 if __name__ == '__main__':
