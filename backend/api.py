@@ -1,12 +1,12 @@
 from flask import Flask, render_template
 from pymongo import MongoClient
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 
 
 @app.route('/index')
 def get_tree():
-    return "hello world - main page"
+    return render_template('temp.html')
 
 
 @app.route('/getNode/<personId>')
