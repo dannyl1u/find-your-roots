@@ -5,7 +5,7 @@ db = client.get_database('familyTree_db')
 records = db.tree_nodes
 
 
-def get_doc_count()
+def get_doc_count():
     """
     returns number of documents(objects) in the database
     :return: doc_count: number of documents(objects) in database
