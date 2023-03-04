@@ -1,12 +1,8 @@
 from flask import Flask, render_template
-from pymongo import MongoClient
-
+import api_requests.py
+doc_search(search_val)
 app = Flask(__name__)
 
-client = MongoClient("mongodb+srv://test:test@rootdata.glqu7s9.mongodb.net/?retryWrites=true&w=majority")
-db = client.get_database('familyTree_db')
-records = db.tree_nodes
-doc_count = records.count_documents({})
 
 # How to make new document (INSERTING) -------------------------
 
