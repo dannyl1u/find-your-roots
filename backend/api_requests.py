@@ -35,7 +35,7 @@ def search_doc(search_val: dict):
     :param: search_val: dictionary value that you want to find in documents(objects), should follow: search_val = {'key': keyVal}
     :return: doc_dict: list of all dictionaries that contain the search_val parameter
     """
-    doc_dict = record.find_one(search_val)
+    doc_dict = records.find_one(search_val)
     return doc_dict
 
 def update_doc(to_update: dict, changes: dict):
@@ -44,4 +44,4 @@ def update_doc(to_update: dict, changes: dict):
     :param: to_update: dictionary containing key and keyVal of document(object) to be updated, should follow: to_update = {'key': keyVal}
     :param: changes: dictionary containing changed key and keyVal, should follow: changes = {'key': keyVal}
     """
-    records.update_one(previous, {'$set': updates})
+    records.update_one(to_update, {'$set': changes})
