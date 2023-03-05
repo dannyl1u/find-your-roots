@@ -5,6 +5,10 @@ import { useState, useEffect } from 'react';
 // import {Person} from 'components/Person'
 import FamilyTree from './mytree'
 
+
+let personId = 1;
+let prevPersonId = 0;
+
 function App() {
   const [data, setData] = useState([])
   useEffect(() => {
@@ -14,7 +18,7 @@ function App() {
       res.json().then((data) => {
           // Setting a data from api
           setData(data)
-          console.log(data) // data = [{...}, {...}, {...}]
+
       })
 
       
@@ -32,15 +36,24 @@ function App() {
         { id: 6, mid: 3, fid: 4, name: 'Bobby Chan', gender: 'female', img: 'https://cdn.balkan.app/shared/w10/3.jpg' },
         { id: 7, mid: 3, fid: 4, name: 'Bobby Chan', gender: 'female', img: 'https://cdn.balkan.app/shared/w10/3.jpg' }
   ]} />
-  //   <div>
-  //   {data && (
-  //     <ul>
-  //       {data.map(person => (
-  //         <li> {person.name} {person.age}</li>
-  //       ))}
-  //     </ul>
-  //   )}
-  // </div>
+  
+
+    <div>
+    {data && (
+      <ul>
+        {data.map(person => {
+          // personId++
+
+          //<li> {person.name} {person.age} {person.id} </li>
+          return <FamilyTree nodes={
+            [{id: person.id, pids: [person.id], name: person.name, gender: 'female', img: 'https://cdn.balkan.app/shared/2.jpg'}]}/>
+            
+          })}
+        
+        
+      </ul>
+    )}
+  </div>
 
   );
 }
