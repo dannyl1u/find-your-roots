@@ -57,7 +57,9 @@ def getnames():
     nodes_json = []
     if records.find({}):
         for node in records.find({}).sort("name"):
-            nodes_json.append({"name": node['name'], "id": str(node['_id']), "age": node['age']})
+            # { id: 1, pids: [2], name: 'asdf', gender: 'female', img: 'https://cdn.balkan.app/shared/2.jpg'  }
+            #if node["pids"]
+            nodes_json.append({"id": node['id'], "pids": node['pids'], "mid": node['mid'], "fid": node['fid'], "name": node['name'], "gender": node['gender']})
     return json.dumps(nodes_json)
     
 
